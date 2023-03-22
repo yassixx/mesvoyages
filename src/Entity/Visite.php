@@ -65,9 +65,6 @@ class Visite
     }
 
     
-
-  
-
     public function getId(): ?int
     {
         return $this->id;
