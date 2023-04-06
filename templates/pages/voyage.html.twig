@@ -17,7 +17,16 @@
             {% endfor %}
             </div>
             <div class="col">
-                <!-- emplacement photo -->            
+                <!-- emplacement photo -->  
+<div>
+        image actuelle
+        {% if visite.imagename %}
+            <img src="/mesvoyages/public/images/visites/{{ visite.imagename }}"
+                    class="card-img-top" style="width:100%;height:auto;">
+        {% else %}
+            <p>(aucune image)</p>
+        {% endif %}
+    </div>        
             </div>
         </div>
         <div class="row mt-5">
