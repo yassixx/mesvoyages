@@ -44,6 +44,7 @@ class Visite
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Range(min=0, max=20)
      */
     private $note;
 
@@ -59,6 +60,7 @@ class Visite
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\GreaterThan(propertyPath="tempmin")
      */
     private $tempmax;
     
@@ -68,7 +70,7 @@ class Visite
      * @Vich\UploadableField(mapping="visites", fileNameProperty="imageName")
      * @Assert\Image(mimeTypes="image/jpeg") 
      */
-    private ?File $imageFile;
+    private ?File $imageFile = null;
 
     /**
      * @ORM\Column(nullable="true", length=255, type="string")
